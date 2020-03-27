@@ -207,12 +207,11 @@
 </body>
 
 <script>
-
 	const row = document.querySelector('.row');
-	setTimeout(function(){
-		row.classList.add('broski')
-	},500)
-	
+	window.onload = () => {
+		console.log(row)
+		row.classList.add('clear')
+	}
 </script>
 
 </html>
