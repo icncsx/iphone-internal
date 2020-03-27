@@ -1,0 +1,152 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 45%; } }
+  @media only screen and (max-width: 25em) {
+    html {
+      font-size: 40%; } }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  background-color: black; }
+  @media only screen and (max-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+p.note {
+  font-size: 1.6rem;
+  color: white;
+  text-align: center;
+  max-width: 80rem;
+  margin: 0 auto;
+  margin-top: 20rem;
+  text-align: left; }
+
+.phone-container {
+  margin: 10vh auto; }
+
+p.instruction {
+  color: #dedede;
+  text-align: center;
+  font-size: 1.5rem; }
+
+a {
+  text-decoration: none; }
+
+h1.main-title {
+  margin: 0 auto;
+  font-size: 10rem;
+  font-weight: lighter;
+  font-style: italic;
+  color: #2FD4C9;
+  padding: 5rem;
+  text-align: center;
+  width: 80vw;
+  max-width: 130rem; }
+  @media only screen and (max-width: 75em) {
+    h1.main-title {
+      font-size: 9rem; } }
+  @media only screen and (max-width: 56.25em) {
+    h1.main-title {
+      font-size: 6rem;
+      width: 90vw; } }
+
+.row {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+  display: block;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 140rem;
+  margin: 0 auto; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 8rem;
+  width: 30%;
+  max-width: 30rem;
+  height: 70rem;
+  perspective: 70rem;
+  -moz-perspective: 70rem;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+  @media only screen and (max-width: 56.25em) {
+    .card {
+      width: 40%;
+      height: 65rem;
+      margin: 2rem 6rem; } }
+  @media only screen and (max-width: 25em) {
+    .card {
+      width: 80%;
+      margin: 2rem 4rem; } }
+  .card img {
+    width: 100%;
+    height: auto; }
+  .card__side {
+    transition: transform 0.8s ease-out;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    width: auto; }
+    .card__side .title {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 8rem;
+      position: absolute;
+      z-index: 23; }
+      @media only screen and (max-width: 25em) {
+        .card__side .title {
+          font-size: 5rem; } }
+    .card__side--back {
+      transform: rotateY(180deg); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+
+.broski {
+  opacity: 1; }
