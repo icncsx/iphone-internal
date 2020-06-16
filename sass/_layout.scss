@@ -1,161 +1,159 @@
 p.note {
-    font-size: 1.6rem;
-    color: white;
-    text-align: center;
-    max-width: 80rem;
-    margin: 0 auto;
-    margin-top: 20rem;
-    text-align: left;
+  font-size: 1.6rem;
+  color: white;
+  text-align: center;
+  max-width: 80rem;
+  margin: 0 auto;
+  margin-top: 20rem;
+  text-align: left;
 }
 
 .phone-container {
-    margin: 10vh auto;
+  margin: 10vh auto;
 }
 
 p.instruction {
-    color: rgb(222,222,222);
-    text-align: center;
-    font-size: 1.5rem;
+  color: rgb(222, 222, 222);
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h1.main-title {
-    margin: 0 auto;
-    font-size: 10rem;
-    font-weight: lighter;
+  margin: 0 auto;
+  font-size: 10rem;
+  font-weight: lighter;
 
-    font-style: italic;
+  font-style: italic;
 
-    color: #2FD4C9;
-    padding: 5rem;
-    text-align: center;
-    width: 80vw;
-    max-width: 130rem;
+  color: #2fd4c9;
+  padding: 5rem;
+  text-align: center;
+  width: 80vw;
+  max-width: 130rem;
 
-    @include respond(tab-land) { // width < 1200?
-        font-size: 9rem; //1 rem = 9px, 9/16 = 50%
-    }
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 9rem; //1 rem = 9px, 9/16 = 50%
+  }
 
-    @include respond(tab-port) { // width < 900?
-        font-size: 6rem; //1 rem = 8px, 8/16 = 50%
-        width: 90vw;
-    }
-
-
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 6rem; //1 rem = 8px, 8/16 = 50%
+    width: 90vw;
+  }
 }
 
 .row {
-    opacity: 0;
-    transition: opacity 0.8s ease-out;
-    display: block;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    max-width: 140rem;
-    margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+  display: block;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 140rem;
+  margin: 0 auto;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  margin: 2rem 8rem;
 
-    margin: 2rem 8rem;
+  width: 30%;
+  max-width: 30rem;
 
-    width: 30%;
-    max-width: 30rem;
+  height: 70rem;
 
-    height: 70rem;
+  @include respond(tab-port) {
+    // width < 900?
+    width: 40%;
+    height: 65rem;
+    margin: 2rem 6rem;
+  }
 
-    @include respond(tab-port) { // width < 900?
-        width: 40%;
-        height: 65rem;
-        margin: 2rem 6rem;
-    }
+  @include respond(phone) {
+    // width < 400?
+    width: 80%;
+    margin: 2rem 4rem;
+  }
 
-    @include respond(phone) { // width < 400?
-        width: 80%;
-        margin: 2rem 4rem;
-    }
+  img {
+    width: 100%;
+    height: auto;
+  }
 
-    img {
-        width: 100%;
-        height: auto;
-    }
+  // FUNCTIONALITY
+  perspective: 70rem;
+  -moz-perspective: 70rem;
 
-    // FUNCTIONALITY
-    perspective: 70rem;
-    -moz-perspective: 70rem;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 
-    position: relative;
+  &__side {
+    transition: transform 0.8s ease-out;
+    position: absolute;
+
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
-    &__side {
-        transition: transform 0.8s ease-out;
-        position: absolute;
+    overflow: hidden;
+    width: auto;
 
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
+    .title {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 8rem;
+      position: absolute;
+      z-index: 23;
 
-        overflow: hidden;
-        width: auto;
-
-        .title {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            color: white;
-            font-size: 8rem;
-            position: absolute;
-            z-index: 23;
-
-            @include respond(phone) { // width < 600?
-                font-size: 5rem;
-            }
-
-        }
-
-        .bg-img {
-            // position: absolute;
-            // background-position: center;
-            // background-size: cover;
-            // background-image: url('../img/background/1-background.jpg');
-            
-            // left: 6.6350710900473935%;
-            // top: 11.477339611536198%;
-            // width: 86.96682464454977%;
-            // height: 76.75103001765744%;
-        }
-
-        &--front {
-            &-1 {
-            }
-
-        }
-
-        &--back {
-            transform: rotateY(180deg);
-        }
-    }
-  
-
-    &:hover &__side--front {
-        transform: rotateY(-180deg);
+      @include respond(phone) {
+        // width < 600?
+        font-size: 5rem;
+      }
     }
 
-    &:hover &__side--back {
-        transform: rotateY(0);
+    .bg-img {
+      // position: absolute;
+      // background-position: center;
+      // background-size: cover;
+      // background-image: url('../img/background/1-background.jpg');
+
+      // left: 6.6350710900473935%;
+      // top: 11.477339611536198%;
+      // width: 86.96682464454977%;
+      // height: 76.75103001765744%;
     }
 
+    &--front {
+      &-1 {
+      }
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
 }
 
 .clear {
-    opacity: 1;
+  opacity: 1;
 }
