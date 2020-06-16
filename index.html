@@ -1,217 +1,69 @@
 <!DOCTYPE html>
-
 <html lang="en" class="fonts-loaded">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="icon" href="favicon.png">
+      <meta data-rh="true" name="viewport"
+         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
+      <meta data-rh="true" http-equiv="X-UA-Compatible" content="IE=Edge">
+      <title>
+         iPhone Anatomy
+      </title>
+      <link rel="stylesheet" href="./css/style.css">
+   </head>
+   <body>
+      <h1 class='main-title'>What iPhone Looks Like Inside: Evidence of Technical Progress</h1>
+      <p class='instruction'>( Hover over any iPhone )</p>
+      <div class='phone-container'>
+      <div class="row"></div>
+      <p class='note'>This is a recreation of the wildly popular "What’s Inside
+         All the iPhones" piece by <a href="https://www.bloomberg.com/features/apple-iphone-guts/" target="_blank">
+         Bloomberg Graphics</a> using Flexbox and CSS 3D transforms.
+      </p>
+   </body>
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="icon" href="favicon.png">
-	<meta data-rh="true" name="viewport"
-		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
-	<meta data-rh="true" http-equiv="X-UA-Compatible" content="IE=Edge">
+   <script>
+	  const order = ["1", "3g", "3gs", "4", "5", "5c", "5s", "6", "6plus", "6splus", "7", "7plus", "8", "se", "x"]
+	  const row = document.querySelector('.row'); 
+	  for (const el of order){
+		const card = document.createElement("div")
+		card.className = "card";
 
-	<title>
-		iPhone Anatomy
-	</title>
+		const card_front = document.createElement("div")
+		card_front.className = "card__side card__side--front"
 
-	<link rel="stylesheet" href="./css/style.css">
+		const front_img =  document.createElement("img")
+		front_img.src = `img/front/${el}.png`
+		front_img.alt = `Front of iPhone ${el}`
 
-</head>
+		card_front.appendChild(front_img)
 
-<body>
-	<h1 class='main-title'>What iPhone Looks Like Inside: Evidence of Technical Progress</h1>
+		const front_title = document.createElement("div")
+		front_title.className = "title"
 
-	<p class='instruction'>( Hover over any iPhone )</p>
+		const title_text = document.createTextNode(el.toUpperCase())
+		front_title.appendChild(title_text)
 
-	<div class='phone-container'>
+		card_front.appendChild(front_title)
 
-		<div class="row">
+		const card_back = document.createElement("div");
+		card_back.className = "card__side card__side--back"
 
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/x.png" alt="">
-					<div class='title'>X</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/x.png" alt="">
-				</div>
-			</div>
+		const back_img =  document.createElement("img")
+		back_img.src = `img/back/${el}.png`
+		back_img.alt = `Back of iPhone ${el}`
 
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/8.png" alt="">
-					<div class='title'>8</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/8.png" alt="">
-				</div>
-			</div>
+		card_back.appendChild(back_img)
 
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/7plus.png" alt="">
-					<div class='title'>7+</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/7plus.png" alt="">
-				</div>
-			</div>
+		card.appendChild(card_front)
+		card.appendChild(card_back)
 
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/7.png" alt="">
-					<div class='title'>7</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/7.png" alt="">
-				</div>
-			</div>
+		row.appendChild(card)
 
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/se.png" alt="">
-					<div class='title'>SE</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/se.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/6splus.png" alt="">
-					<div class='title'>6S+</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/6splus.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/6s.png" alt="">
-					<div class='title'>6S</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/6s.png" alt="">
-				</div>
-			</div>
-
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/6plus.png" alt="">
-					<div class='title'>6+</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/6plus.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/6.png" alt="">
-					<div class='title'>6</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/6.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/5s.png" alt="">
-					<div class='title'>5S</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/5s.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/5c.png" alt="">
-					<div class='title'>5C</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/5c.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/5.png" alt="">
-					<div class='title'>5</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/5.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/4s.png" alt="">
-					<div class='title'>4S</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/4s.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/4.png" alt="">
-					<div class='title'>4</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/4.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/3gs.png" alt="">
-					<div class='title'>3GS</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/3gs.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/3g.png" alt="">
-					<div class='title'>3G</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/3g.png" alt="">
-				</div>
-			</div>
-
-			<div class="card">
-				<div class="card__side card__side--front">
-					<img src="img/front/1.png" alt="">
-					<div class='title'>1</div>
-				</div>
-				<div class="card__side card__side--back">
-					<img src="img/back/1.png" alt="">
-				</div>
-			</div>
-
-		</div>
-
-		<p class='note'>This is a recreation of the wildly popular "What’s Inside
-			All the iPhones" piece by <a href="https://www.bloomberg.com/features/apple-iphone-guts/" target="_blank">
-				Bloomberg Graphics</a> using Flexbox and CSS 3D transforms.</p>
-
-
-</body>
-
-<script>
-	const row = document.querySelector('.row');
-	window.onload = () => {
-		console.log(row)
-		row.classList.add('clear')
-	}
-</script>
-
+	  } 
+      window.onload = () => {
+      	console.log(row)
+      	row.classList.add('clear')
+      }
+   </script>
 </html>
